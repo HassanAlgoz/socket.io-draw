@@ -1,7 +1,7 @@
 {
-  "name": "draw-app",
+  "name": "shared-board",
   "version": "1.0.0",
-  "description": "Group drawing app with chat using the socket.io library",
+  "description": "Shared board for drawing with chat using the socket.io library",
   "main": "app.js",
   "scripts": {
     "start": "node server.js"

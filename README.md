@@ -1,8 +1,8 @@
-# Group Drawing App
-The "app" uses [SOCKET.IO 2.x](https://socket.io/) library (which has a very good API and documentation) to allow users to communicate via a server which only broadcasts their messages to each other.
+# Shared Boards
+An online website of rooms/namespaces which users can join in to draw on shared boards while chatting.
 
 ## Client-Server
-Both the server (Node.js) and the client (Browser JS) are setup in this project. Just run `npm install && npm start` and you are good to go on [localhost:3000/lobby](localhost:3000/lobby).
+The "app" uses [SOCKET.IO 2.x](https://socket.io/) library (which has a very good API and documentation) to allow users to communicate via a server which only broadcasts their messages to each other. Both the server (Node.js) and the client (Browser JS) are setup in this project. Just run `npm install && npm start` and you are good to go on [localhost:3000/lobby](localhost:3000/lobby).
 
 ## Play
 Open two browser tabs on [localhost:3000/lobby](localhost:3000/lobby) and join the same room. Now you have two connected clients.
