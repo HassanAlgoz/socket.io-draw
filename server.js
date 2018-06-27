@@ -62,11 +62,19 @@ namespaces.map(ns => io.of(`/${ns}`))
         // Disconnected
         socket.on('disconnect', function() {
             // Remove the socket.id -> name mapping of this user
+            let name;
             if (socket.id in users) {
-                console.log('disconnect: ' + users[socket.id])
+                name = users[socket.id]
             } else {
-                console.log('disconnect: ' + socket.id)
+                name = socket.id
             }
+            console.log('disconnect: ' + name)
+            
+            socket.broadcast.emit('msg', {
+                from: 'server',
+                message: `${name} disconnected.`
+            })
+            
             delete users[socket.id]
             // io.emit('disconnect', socket.id)
         })
