@@ -1,4 +1,4 @@
-# Draw App
+# Group Drawing App
 The "app" uses [SOCKET.IO 2.x](https://socket.io/) library (which has a very good API and documentation) to allow users to communicate via a server which only broadcasts their messages to each other.
 
 ## Client-Server
