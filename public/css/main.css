@@ -1,0 +1,19 @@
+#messagesContainer {
+    max-height: 320px;
+    height: 320px;
+    overflow-y: scroll;
+}
+
+.chat-message:nth-child(even) {
+    background-color: rgba(235, 231, 231, 0.35)
+}
+
+.hidden {
+    display: none;
+}
+
+button,
+input[type="button"],
+input[type="submit"] {
+    cursor: pointer;
+}

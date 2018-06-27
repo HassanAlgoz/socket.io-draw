@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Draw</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/draw.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h4 id="title"></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <form id="loginForm">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" autocomplete="off" placeholder="name..." id="nameInput">
+                        <div class="input-group-append">
+                            <button class="btn btn-success" type="submit">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Top Buttons Row -->
+        <div class="row">
+            <div class="col">
+                <button id="undo">Undo</button>
+                <button id="clear">Clear</button>
+                <!-- Colors -->
+                <div class="color black" data-color="black"></div>
+                <div class="color blue"  data-color="blue"></div>
+                <div class="color red"   data-color="red"></div>
+                <div class="color green" data-color="green"></div>
+                <!-- Thickness -->
+                <div class="thickness small"  data-thickness="1">1</div>
+                <div class="thickness medium" data-thickness="3">3</div>
+                <div class="thickness big"    data-thickness="6">6</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" id="canvasContainer">
+                <!-- Drawing Canvas -->
+                <canvas id="canvas"></canvas>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col" id="messagesContainer">
+                        <!-- Chat Messages Here -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <form id="messageForm" class="hidden">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" autocomplete="off" placeholder="chat..." id="messageInput">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-primary" type="submit">Send</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/chat.js" type="module"></script>
+    <script src="/js/draw.js" type="module"></script>
+</body>
+</html>
