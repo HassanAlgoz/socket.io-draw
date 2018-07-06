@@ -55,10 +55,19 @@ function onPageLoad() {
     state.refresh()
     
     // Undo button
-    document.getElementById('undo').addEventListener('click', () => {
+    document.getElementById('undo').addEventListener('click', undoHandler)
+
+    // Ctrl+Z Undo
+    document.addEventListener('keydown', (evt) => {
+        if (evt.ctrlKey && evt.keyCode === 90) {
+            undoHandler()
+        }
+    })
+
+    function undoHandler() {
         undo()
         Remote.send(Remote.e.undo)
-    })
+    }
     
     // Clear button
     document.getElementById('clear').addEventListener('click', () => {
