@@ -12,25 +12,24 @@ button#clear {
     display: inline-block;
 }
 
-div > .color {
-    border: 1px solid black;
+#colors {
+    /* border: 1px solid black; */
+    margin: 0;
+    padding: 2px;
 }
 
-.color {
+#colors * {
     width: 24px;
     height: 24px;
     cursor: pointer;
     display: inline-block;
+    border: none;
+    margin: 0 1px;
 }
 
-.color:hover {
+#colors *:hover {
     opacity: 0.6;
 }
-
-.color.red { background-color: red; }
-.color.green { background-color: green; }
-.color.blue { background-color: blue; }
-.color.black { background-color: black; }
 
 .thickness {
     background-color: black;

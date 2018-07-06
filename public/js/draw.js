@@ -75,16 +75,35 @@ function onPageLoad() {
         Remote.send(Remote.e.clear)
     })
     
+    // Color Select Shortcuts (Numbers)
+    const colors = [
+        'black', // 1
+        'blue',  // 2
+        'red',   // 3
+        'green', // 4
+    ];
+    document.addEventListener('keydown', (evt) => {        
+        const num = evt.keyCode - 49;
+        const color = colors[num];
+        if (color) {
+            state.setColor(color)
+            Remote.send(Remote.e.setColor, color)
+        }
+    })
     // Color Buttons
-    for(const btn of document.getElementsByClassName('color')) {
+    const $colors = document.getElementById('colors');
+    for(const color of colors) {
+        const btn = document.createElement('button')
+        btn.style.backgroundColor = color;
         btn.addEventListener('click', () => {
-            const color = btn.getAttribute('data-color');
             state.setColor(color)
             Remote.send(Remote.e.setColor, color)
         })
+        $colors.appendChild(btn)
     }
 
-    // Line Width
+    
+    // Line Width Buttons
     for(const btn of document.getElementsByClassName('thickness')) {
         btn.addEventListener('click', () => {
             const thickness = btn.getAttribute('data-thickness');
